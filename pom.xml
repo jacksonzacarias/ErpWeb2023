@@ -21,11 +21,15 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Usamos esse trecho para fazer dowloand do primefaces -->
         <dependency>
-            <groupId>org.primefaces</groupId>
+            <groupId>org.primefaces</groupId>   
             <artifactId>primefaces</artifactId>
             <version>7.0</version>
         </dependency>
+
+        <!-- Usamos esse trecho para fazer dowloand do primefaces -->
     </dependencies>
 
     <build>
@@ -79,3 +83,4 @@
     </build>
 
 </project>
+<!-- O pom.xml serve para configurar o projeto, nele é possível configurar o nome do projeto, a versão, o tipo de projeto, as dependências, os plugins, etc. -->

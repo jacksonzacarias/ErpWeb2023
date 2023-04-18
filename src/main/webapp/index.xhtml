@@ -9,28 +9,38 @@
     <h:body>
         <h1 align="center">Cadastro de Clientes</h1>
         <br/>
-        <h:form>
-            <p:messages />
-            <p:growl showDetail="false"/>
-            
-            <p:panelGrid columns="3">
-                Nome:<p:inputText value="#{clienteControle.cliente.nome}" size="50"
+        <h:form> <!-- // Aqui é o formulario que vai receber os dados do cliente  -->
+            <p:messages /> <!-- Mensagem de erro do Primefaces -->
+             <p:growl showDetail="false"/> <!--// Aqui é o growl que vai receber a mensagem de erro do Primefaces  -->
+            <!--  -->
+            <p:panelGrid columns="3"> <!-- Aqui informo a coluna 3 e dou um id para coluna  -->
+                Nome:<p:inputText value="#{clienteControle.cliente.nome}" size="50" 
                                   required="true" requiredMessage="O nome é obrigatório!"
                                   id="nome"/>
-                <p:message for="nome"/>
-                CPF:<p:inputText value="#{clienteControle.cliente.cpf}" size="10"
+                <p:message for="nome"/> <!-- Nome é esta na coluna ele vai ser uma entrada de texto e o seu valor é onde vamos receber seu tamanho é de  50pixel, requeried verdade, e ele vai manda messagem dizendo que o cpf é obrigatorio se nao for preenchido para xhtml ele recebe id de cpf   -->
+                 CPF:<p:inputText value="#{clienteControle.cliente.cpf}" size="10" 
                                 required="true" requiredMessage="O CPF é obrigatória!"
                                 id="cpf"/>
+
+                                <!-- // Aqui é o inputText que vai receber o cpf do cliente e o seu tamanho é de 10pixel, requeried verdade, e ele vai manda messagem dizendo que o cpf é obrigatorio se nao for preenchido para xhtml ele recebe id de cpf -->
                 <p:message for="cpf"/>
                 RG:<p:inputText value="#{clienteControle.cliente.rg}" size="10"
                                 id="rg"/>
                 <p:message for="rg"/>
+
+                <!-- // Aqui é o inputText que vai receber o rg do cliente e o seu tamanho é de 10pixel, requeried -->
                 Telefone:<p:inputText value="#{clienteControle.cliente.telefone}" size="10"
-                                id="telefone"/>
-                <p:message for="telefone"/>
+                                id="telefone"/> 
+                                <p:message for="telefone"/>
+                                <!-- Essa é uma entrada de texto (input text) com um componente do PrimeFaces (p:inputText) que está vinculada à propriedade "telefone" do bean gerenciado 
+                                    "clienteControle". O valor digitado no campo será armazenado na propriedade "telefone" do objeto "cliente" gerenciado por "clienteControle". O atributo 
+                                    "size" define o tamanho do campo em caracteres e o atributo "id" define um identificador único para o campo. A tag <p:message> está associada a esse 
+                                        campo e será usada para exibir mensagens de erro ou validação relacionadas a ele. -->
                 Endereco:<p:inputText value="#{clienteControle.cliente.endereco}" size="10"
                                 id="endereco"/>
                 <p:message for="endereco"/>
+
+                <!-- Essa é outra entrada de texto semelhante ao campo de telefone, mas para o endereço do cliente.  -->
                 N°:<p:inputText value="#{clienteControle.cliente.numero}" size="10"
                                 id="numero"/>
                 <p:message for="numero"/>
