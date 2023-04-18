@@ -43,44 +43,58 @@
                 <!-- Essa é outra entrada de texto semelhante ao campo de telefone, mas para o endereço do cliente.  -->
                 N°:<p:inputText value="#{clienteControle.cliente.numero}" size="10"
                                 id="numero"/>
-                <p:message for="numero"/>
+                                <p:message for="numero"/>
+                                <!-- Essa é outra entrada de texto para o número do endereço do cliente. -->
                 <p:commandButton value="Salvar" action="#{clienteControle.salvar()}"
                                  ajax="false"/>
+
+                                 <!-- Esse é um botão de comando do PrimeFaces (p:commandButton) com o rótulo "Salvar". Quando clicado, ele chama o método "salvar()"
+                                     no bean gerenciado "clienteControle" como ação. O atributo "ajax" está definido como "false", o que significa que a requisição 
+                                     será feita de forma síncrona, ou seja, a página será recarregada completamente após o clique no botão. -->
             </p:panelGrid>            
             <p:dataTable value="#{clienteControle.listaCliente}" var="cli"
                          emptyMessage="Nenhum cliente cadastrado!"
                          paginator="true" rows="2" 
                          rowsPerPageTemplate="2,5,10,{ShowAll|'All'}">
+
+                          <!-- Coluna "Nome" com filtro, ordenação e valor exibido -->
                 <p:column headerText="Nome"
                     filterBy="#{cli.nome}" filterMatchMode="contains"
                     sortBy="#{cli.nome}">
                     <p:outputLabel value="#{cli.nome}"/>
                 </p:column>
+                 <!-- Coluna "CPF" com filtro, ordenação e valor exibido -->
                 <p:column headerText="CPF"
                     filterBy="#{cli.cpf}" filterMatchMode="contains"
                     sortBy="#{cli.cpf}">
                     <p:outputLabel value="#{cli.cpf}"/>
                 </p:column>
+                <!-- Coluna "RG" com filtro, ordenação e valor exibido -->
                 <p:column headerText="RG"
                     filterBy="#{cli.rg}" filterMatchMode="contains"
                     sortBy="#{cli.rg}">
                     <p:outputLabel value="#{cli.rg}"/>
                 </p:column>
+
+                 <!-- Coluna "Telefone" com filtro, ordenação e valor exibido -->
                 <p:column headerText="Telefone"
                     filterBy="#{cli.telefone}" filterMatchMode="contains"
                     sortBy="#{cli.telefone}">
                     <p:outputLabel value="#{cli.telefone}"/>
                 </p:column>
+                 <!-- Coluna "Endereco" com filtro, ordenação e valor exibido -->
                 <p:column headerText="Endereco"
                     filterBy="#{cli.endereco}" filterMatchMode="contains"
                     sortBy="#{cli.endereco}">
                     <p:outputLabel value="#{cli.endereco}"/>
                 </p:column>
+                <!-- Coluna "Numero" com filtro, ordenação e valor exibido -->
                 <p:column headerText="Numero"
                     filterBy="#{cli.numero}" filterMatchMode="contains"
                     sortBy="#{cli.numero}">
                     <p:outputLabel value="#{cli.numero}"/>
                 </p:column>
+                 <!-- Coluna "OP" com botão de comando para remover cliente -->
                 <p:column headerText="OP" width="50">
                     <p:commandButton ajax="false" 
                                      action="#{clienteControle.remover(cli)}"
@@ -88,6 +102,10 @@
                                      immediate="true"/>
                 </p:column>                               
             </p:dataTable>
+
+            <!-- Essa é uma tabela de dados do PrimeFaces (p:dataTable) que exibe a lista de clientes gerenciada pela propriedade "listaCliente" do bean gerenciado "clienteControle". A variável "cli" é usada para iterar sobre a 
+                lista de clientes e exibir os dados em cada linha da tabela. Os atributos "emptyMessage", "paginator", "rows" e "rowsPerPageTemplate" definem mensagens de feedback, a ativação da paginação, o número de linhas por 
+                página e os templates de seleção de número de linhas por página, respectivamente. -->
         </h:form>
     </h:body>
 </html>
